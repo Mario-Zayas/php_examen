@@ -1,5 +1,5 @@
 FROM debian
-RUN apt-get update && apt-get install -y php mariadb>
+RUN pip install --root-user-action=ignore --upgrade pip && pip install --root-user-action=ignore php mysqlclient
 COPY src /var/www/html/
 COPY src/database.sql /opt/
 RUN rm /var/www/html/index.html
