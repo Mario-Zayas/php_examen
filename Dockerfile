@@ -9,7 +9,5 @@ ENV DB_NAME examen
 ENV DB_HOST mariadb_examen
 COPY script.sh /usr/local/bin/script.sh
 RUN chmod +x /usr/local/bin/script.sh
-RUN a2enmod rewrite
-COPY apache2.conf /etc/apache2/apache2.conf
 EXPOSE 80
 CMD /usr/local/bin/script.sh

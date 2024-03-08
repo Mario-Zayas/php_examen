@@ -3,7 +3,7 @@ services:
 
   php:
     container_name: php
-    image: mzaygar034/php-examen:v3
+    image: mzaygar034/php-examen:4
     restart: always
     environment:
       DB_HOST: mariadb_examen
