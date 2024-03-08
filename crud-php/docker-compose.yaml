@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+
+  php:
+    container_name: php
+    image: mzaygar034/php-examen:v1
+    restart: always
+    environment:
+      DB_HOST: mariadb_examen
+      DB_USER: mario
+      DB_PASSWORD: hola
+      DB_NAME: examen
+      BASE_URL: http://172.22.201.216:8084/
+    ports:
+      - 8084:80
+    depends_on:
+      - mariadb_examen
+
+  mariadb_examen:
+    container_name: mariadb_examen
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: mario
+      MARIADB_PASSWORD: hola
+      MARIADB_DATABASE: examen
+    volumes:
+      - mariadb_examen_data:/var/lib/mysql
+volumes:
+  mariadb_examen_data:
