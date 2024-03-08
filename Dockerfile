@@ -1,5 +1,5 @@
 FROM debian
-RUN apt-get update && apt-get install -y apache2 libapache2-mod-php php mariadb>
+RUN apt-get update && apt-get install -y php mariadb>
 COPY src /var/www/html/
 COPY src/database.sql /opt/
 RUN rm /var/www/html/index.html
