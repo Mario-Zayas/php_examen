@@ -4,7 +4,7 @@ pipeline {
         stage('Testing') { 
             agent { 
                 docker { 
-                    image 'debian'
+                    image 'python:3'
                     args '-u root:root'
                 }
             }
