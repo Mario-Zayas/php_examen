@@ -39,7 +39,7 @@ pipeline {
             agent any
             steps{
                 sshagent(credentials : ['CLAVE_SSH']) {
-                    sh 'ssh -o StrictHostKeyChecking=no mario@maquinanodriza.mzgmaquina.es wget https://raw.githubusercontent.com/Mario-Zayas/php_examen/main/crud-php/docker-compose.yaml -O docker-compose.yaml'
+                    sh 'ssh -o StrictHostKeyChecking=no mario@maquinanodriza.mzgmaquina.es wget https://raw.githubusercontent.com/Mario-Zayas/php_examen/main/docker-compose.yaml -O docker-compose.yaml'
                     sh 'ssh -o StrictHostKeyChecking=no mario@maquinanodriza.mzgmaquina.es docker compose up -d --force-recreate'
                 }
             }
