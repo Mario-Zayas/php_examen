@@ -1,4 +1,4 @@
-FROM debian
+FROM python:3
 RUN apt-get update && \
     apt-get install -y python3 python3-pip
 RUN pip install --root-user-action=ignore --upgrade pip && pip install --root-user-action=ignore php mysqlclient
