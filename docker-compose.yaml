@@ -3,14 +3,13 @@ services:
 
   php:
     container_name: php
-    image: mzaygar034/php-examen:v1
+    image: mzaygar034/php-examen:v3
     restart: always
     environment:
       DB_HOST: mariadb_examen
       DB_USER: mario
       DB_PASSWORD: hola
       DB_NAME: examen
-      BASE_URL: http://172.22.201.216:8084/
     ports:
       - 8084:80
     depends_on:
